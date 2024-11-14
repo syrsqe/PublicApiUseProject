@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="/styles/styleSheet.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class = "item" id="title">Welcome to the Jokes page </div>
+        <!-- <div class = "flex-item"> hello you are the man</div> -->
+        <div class="item" id="dropDown">
+            <form action="/submit" method = "POST">
+                <select name="selectedJoke" id="dropDow">
+                    <!-- <option value="Any">Any</option>
+                    <option value="Misc">Misc</option>
+                    <option value="Programming">Programming</option>
+                    <option value="Pun">Pun</option>
+                    <option value="Christmas">Christmas</option> -->
+
+                    <option value="Any" <%= selectedJoke === 'Any' ? 'selected' : '' %>>Any</option>
+                    <option value="Misc" <%= selectedJoke === 'Misc' ? 'selected' : '' %>>Misc</option>
+                    <option value="Programming" <%= selectedJoke === 'Programming' ? 'selected' : '' %>>Programming</option>
+                    <option value="Pun" <%= selectedJoke === 'Pun' ? 'selected' : '' %>>Pun</option>
+                    <option value="Christmas" <%= selectedJoke === 'Christmas' ? 'selected' : '' %>>Christmas</option>
+                
+                </select>
+                <input id="button" type="submit">
+    
+            </form>
+
+
+        </div>
+        <% if(locals.setup && locals.punchLine) { %>
+        <div id="joke">
+            <div class = "item">Q: <%=setup%> </div>
+            <div class = "item">-: <%=punchLine%> </div>
+            <%}%>
+        </div>
+      
+
+    </div>
+</body>
+</html>
